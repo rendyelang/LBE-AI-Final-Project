@@ -1,0 +1,30 @@
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import "tailwindcss";
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.bg-input {
+    background-color: #262730;
+}
+
+.prose h3 {
+  @apply text-lg font-semibold mt-4;
+}
+
+.dark .prose-invert h3 {
+  @apply text-white;
+}
+
+.prose ul {
+    @apply list-disc pl-6 py-3;
+}
+
+.grads {
+    background: linear-gradient(to right, #2A7B9B, #57C785, #EDDD53);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

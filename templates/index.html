@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/dist/output.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body class="bg-[#151923] text-white xl:pt-[100px] xl:pb-12 xl:px-20 sm:py-10 sm:px-5 py-7 px-3">
+    <main>
+        <div class="flex flex-col items-center justify-center mb-20">
+            <h1 class="lg:text-4xl sm:text-3xl text-2xl font-bold mb-16 text-center grads">Let's Become Enterpreneurs</h1>
+            <p class="text-center xl:w-1/3 sm:w-1/2 w-[75%] lg:text-lg text-sm">Kalo kamu ingin menjadi pengusaha, 
+                namun bingung usaha apa yang cocok dan 
+                bisa kamu jalankan dengan lokasi dan budget milikmu? 
+                ayo konsultasikan di aplikasi LBE ini!</p>
+        </div>
+        <form class="mb-7" method="post">
+            <div class="flex flex-col mb-12">
+                <label for="lokasi" class="mb-5">Lokasi</label>
+                <input type="text" id="lokasi" name="lokasi" class="bg-input outline-none h-14 px-5 rounded-xl text-sm" placeholder="Masukkan lokasi rencana usaha kamu">
+            </div>
+            <div class="flex flex-col mb-12">
+                <label for="budget" class="mb-5">Budget dalam Rupiah</label>
+                <input type="number" id="budget" name="budget" class="bg-input outline-none h-14 px-5 rounded-xl" placeholder="Masukkan budget">
+            </div>
+            <div class="flex justify-end">
+                <button class="bg-violet-700 px-4 py-2 rounded-xl justify-end cursor-pointer">Submit</button>
+            </div>
+        </form>
+        <div>
+            <p class="font-medium text-2xl">Rekomendasi Usaha:</p>
+            <div class="bg-input rounded-xl p-5 w-full mt-5 leading-relaxed prose prose-invert max-w-none">
+                <div>{{ rekomendasi|safe if rekomendasi else '' }}</div>
+            </div>
+        </div>
+    </main>
+    <footer class="flex flex-col items-center justify-center mt-20">
+        <p class="text-sm">Made with ❤️ by <a target="_blank" href="https://linkedin.com/in/rendy-elang-lesmana/" class="text-violet-700">Rendy Elang</a>
+    </footer>
+</body>
+</html>
