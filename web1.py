@@ -31,13 +31,12 @@ Budget: {budget}
         contents=prompt
     )
     html_content = markdown2.markdown(response.text)
-    print(response.text)  # Debugging line to see the response
+    # print(response.text)  # Debugging line to see the response
     return markdown2.markdown(response.text)
 
 load_dotenv()
 
 app = Flask(__name__)
-# app.config['GEMINI_KEY'] = os.getenv('GEMINI_KEY')
 
 @app.route('/', methods=['GET', 'POST'])
 def hello_world():
@@ -53,7 +52,3 @@ def hello_world():
 
 if __name__ == '__main__':
     app.run(debug=True)
-    # server = Server(app.wsgi_app)
-    # server.watch('templates/index.html')
-    # server.watch('static/')
-    # server.serve()
