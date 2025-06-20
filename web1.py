@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, jsonify
-from livereload import Server
-from google import genai
+import google.generativeai as genai
 import markdown2
 from dotenv import load_dotenv
 import os
@@ -25,13 +24,9 @@ Berikan jawaban yang bersahabat namun profesional, tidak terlalu panjang, dan mu
 Lokasi: {lokasi}
 Budget: {budget}
     """
-    client = genai.Client(api_key=api_key)
-    response = client.models.generate_content(
-        model="gemini-2.0-flash", 
-        contents=prompt
-    )
-    html_content = markdown2.markdown(response.text)
-    # print(response.text)  # Debugging line to see the response
+    genai.configure(api_key='AIzaSyCT0XJaAalXXmL1eA_rcM5MBM5wlF_fFUc')
+    model = genai.GenerativeModel("gemini-2.0-flash")
+    response = model.generate_content(prompt)
     return markdown2.markdown(response.text)
 
 load_dotenv()
