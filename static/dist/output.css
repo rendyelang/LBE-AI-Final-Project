@@ -39,9 +39,6 @@
 .mb-20 {
   margin-bottom: calc(var(--spacing) * 20);
 }
-.contents {
-  display: contents;
-}
 .flex {
   display: flex;
 }
